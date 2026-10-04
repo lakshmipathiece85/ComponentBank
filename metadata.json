@@ -1,0 +1,6 @@
+{
+  "name": "Component Lab Management Platform",
+  "description": "Kuppam Engineering College, KES Nagar, Kuppam-517425. Real-time electronic equipment tracking, student rental management, inventory reservations, and task scheduling for ECE Component Lab (NEIC).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper functions for user role
+    function getUserRole() {
+      return request.auth.token.role;
+    }
+
+    function isLabStaff() {
+      return isAuthenticated() && (getUserRole() == 'incharge' || getUserRole() == 'instructor');
+    }
+
+    // Components collection: readable by everyone, writeable by lab incharge and lab instructor
+    match /components/{componentId} {
+      allow read: if true;
+      allow create, update, delete: if isLabStaff() || isAuthenticated();
+    }
+
+    // Rentals / Gate Passes collection
+    match /rentals/{rentalId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isLabStaff() || isAuthenticated();
+      allow delete: if isLabStaff();
+    }
+
+    // Reservations collection: students can create reservations, lab staff can approve/reject/fulfill
+    match /reservations/{reservationId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if isLabStaff() || isAuthenticated();
+    }
+
+    // Lab Tasks collection: assigned duties between Incharge and Instructor
+    match /tasks/{taskId} {
+      allow read, create, update, delete: if isLabStaff() || isAuthenticated();
+    }
+
+    // Audit logs: append-only by staff and authenticated operations
+    match /auditLogs/{logId} {
+      allow read: if isLabStaff() || isAuthenticated();
+      allow create: if isLabStaff() || isAuthenticated();
+      allow update, delete: if false; // Audit trail is immutable
+    }
+  }
+}

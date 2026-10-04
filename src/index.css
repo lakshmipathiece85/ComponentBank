@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* LIGHT BLUE THEME (Requested light blue background color)                    */
+/* -------------------------------------------------------------------------- */
+
+body, #root {
+  background-color: #e0f2fe;
+}
+
+/* Light theme canvas: pleasant light blue background */
+.light-theme {
+  --canvas-bg: #e0f2fe; /* Light blue (sky-100) */
+  background-color: #e0f2fe !important;
+  color: #0f172a !important;
+}
+
+/* App Header in light theme */
+.light-theme header.bg-slate-900 {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #bae6fd !important;
+  box-shadow: 0 1px 4px 0 rgba(14, 165, 233, 0.1) !important;
+}
+
+/* Main Cards and Panels */
+.light-theme .bg-slate-950,
+.light-theme .bg-slate-950\/90,
+.light-theme .bg-slate-950\/80,
+.light-theme .bg-slate-950\/70 {
+  background-color: #f0f9ff !important; /* sky-50 */
+  border-color: #bae6fd !important;
+  color: #0f172a !important;
+}
+
+.light-theme .bg-slate-900,
+.light-theme .bg-slate-900\/95,
+.light-theme .bg-slate-900\/90,
+.light-theme .bg-slate-900\/80,
+.light-theme .bg-slate-900\/60,
+.light-theme .bg-slate-850 {
+  background-color: #ffffff !important;
+  border-color: #bae6fd !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Secondary Panels, Sub-headers, and Item Backgrounds */
+.light-theme .bg-slate-800,
+.light-theme .bg-slate-800\/90,
+.light-theme .bg-slate-800\/80,
+.light-theme .bg-slate-800\/60,
+.light-theme .bg-slate-800\/50,
+.light-theme .bg-slate-800\/40 {
+  background-color: #f0f9ff !important; /* sky-50 */
+  border-color: #bae6fd !important;
+  color: #1e293b !important;
+}
+
+.light-theme .bg-slate-700,
+.light-theme .bg-slate-700\/60 {
+  background-color: #e0f2fe !important; /* sky-100 */
+  color: #0f172a !important;
+}
+
+/* Borders */
+.light-theme .border-slate-800,
+.light-theme .border-slate-700,
+.light-theme .border-slate-700\/50 {
+  border-color: #bae6fd !important;
+}
+
+.light-theme .hover\:border-slate-700:hover {
+  border-color: #7dd3fc !important;
+}
+
+.light-theme .divide-slate-800 > * + * {
+  border-color: #e0f2fe !important;
+}
+
+/* Typography Overrides in Light Theme */
+.light-theme h1:not(button *),
+.light-theme h2:not(button *),
+.light-theme h3:not(button *),
+.light-theme h4:not(button *),
+.light-theme h5:not(button *) {
+  color: #0f172a !important;
+}
+
+.light-theme .text-slate-400 {
+  color: #475569 !important; /* slate-600 for great contrast */
+}
+
+.light-theme .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light-theme .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.light-theme .text-slate-100 {
+  color: #0f172a !important;
+}
+
+/* Ensure headings/labels are dark unless inside a colored button */
+.light-theme strong.text-white {
+  color: #0f172a !important;
+}
+
+.light-theme span.text-white:not(button *):not([class*="bg-"]) {
+  color: #0f172a !important;
+}
+
+.light-theme div.text-white:not(button *):not([class*="bg-"]) {
+  color: #0f172a !important;
+}
+
+/* Input Fields and Forms */
+.light-theme input:not([type="checkbox"]):not([type="radio"]),
+.light-theme textarea,
+.light-theme select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #93c5fd !important;
+}
+
+.light-theme input::placeholder,
+.light-theme textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Active Tabs and Selected Buttons in Light Theme */
+.light-theme .active-tab,
+.light-theme nav button.active-tab,
+.light-theme nav button[class*="bg-teal-600/20"],
+.light-theme nav button[class*="border-teal-"],
+.light-theme .selected-btn,
+.light-theme button.selected-btn {
+  background-color: #bae6fd !important; /* sky-200 / clear distinct light blue */
+  color: #0f172a !important;            /* DARK text on selected button */
+  border-color: #0284c7 !important;      /* sky-600 border */
+  font-weight: 700 !important;
+}
+
+.light-theme .active-tab *,
+.light-theme nav button.active-tab *,
+.light-theme nav button[class*="bg-teal-600/20"] *,
+.light-theme nav button[class*="border-teal-"] *,
+.light-theme .selected-btn *,
+.light-theme button.selected-btn * {
+  color: #0f172a !important;            /* DARK color on icons and text */
+}
+
+/* Specific count badges inside active tabs keep white text */
+.light-theme nav button.active-tab span[class*="bg-rose-"],
+.light-theme nav button.active-tab span[class*="bg-amber-"],
+.light-theme nav button.active-tab span[class*="bg-blue-"] {
+  color: #ffffff !important;
+}
+
+.light-theme nav button.text-slate-400 {
+  color: #475569 !important;
+}
+
+.light-theme nav button.text-slate-400:hover {
+  color: #0f172a !important;
+  background-color: #e0f2fe !important;
+}
+
+/* Tables in Light Theme */
+.light-theme table thead {
+  background-color: #f0f9ff !important;
+  color: #0369a1 !important;
+  border-bottom: 2px solid #bae6fd !important;
+}
+
+.light-theme table tbody tr:hover {
+  background-color: #f0f9ff !important;
+}
+
+/* Modal Dialogs */
+.light-theme .fixed.inset-0 .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #bae6fd !important;
+  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2) !important;
+}
+
+/* Action CTA buttons (like '+ Issue Equipment', 'Add Component') keep crisp white text */
+.light-theme #quick-issue-btn,
+.light-theme #quick-issue-btn *,
+.light-theme #add-component-btn,
+.light-theme #add-component-btn *,
+.light-theme #issue-new-rental-btn,
+.light-theme #issue-new-rental-btn *,
+.light-theme button.bg-teal-600:not(.selected-btn):not([class*="/"]),
+.light-theme button.bg-teal-600:not(.selected-btn):not([class*="/"]) *,
+.light-theme button.bg-blue-600:not(.selected-btn):not([class*="/"]),
+.light-theme button.bg-blue-600:not(.selected-btn):not([class*="/"]) *,
+.light-theme button.bg-rose-600:not(.selected-btn):not([class*="/"]),
+.light-theme button.bg-rose-600:not(.selected-btn):not([class*="/"]) *,
+.light-theme button.bg-amber-600:not(.selected-btn):not([class*="/"]),
+.light-theme button.bg-amber-600:not(.selected-btn):not([class*="/"]) * {
+  color: #ffffff !important;
+}
+
+/* Alert banners and badges */
+.light-theme .bg-rose-950\/40,
+.light-theme .bg-rose-950\/30 {
+  background-color: #ffe4e6 !important;
+  border-color: #fda4af !important;
+  color: #9f1239 !important;
+}
+.light-theme .text-rose-200,
+.light-theme .text-rose-300 {
+  color: #9f1239 !important;
+}
+.light-theme .bg-rose-800\/50 {
+  background-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+.light-theme .bg-amber-950\/40,
+.light-theme .bg-amber-950\/30 {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+.light-theme .text-amber-200,
+.light-theme .text-amber-300 {
+  color: #92400e !important;
+}
+
+.light-theme .bg-emerald-950\/40,
+.light-theme .bg-emerald-950\/30 {
+  background-color: #d1fae5 !important;
+  border-color: #6ee7b7 !important;
+  color: #065f46 !important;
+}
+.light-theme .text-emerald-200,
+.light-theme .text-emerald-300 {
+  color: #065f46 !important;
+}
+
+.light-theme .bg-teal-950\/40,
+.light-theme .bg-teal-950\/30 {
+  background-color: #ccfbf1 !important;
+  border-color: #5eead4 !important;
+  color: #115e59 !important;
+}
+.light-theme .text-teal-200,
+.light-theme .text-teal-300 {
+  color: #0f766e !important;
+}
+
+.light-theme .bg-blue-950\/40,
+.light-theme .bg-blue-950\/30 {
+  background-color: #dbeafe !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
+}
+.light-theme .text-blue-200,
+.light-theme .text-blue-300 {
+  color: #1d4ed8 !important;
+}
+
+.light-theme .bg-purple-950\/40,
+.light-theme .bg-purple-950\/30 {
+  background-color: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+  color: #6b21a8 !important;
+}
+.light-theme .text-purple-200,
+.light-theme .text-purple-300 {
+  color: #6b21a8 !important;
+}
+
+/* Light Theme Code/Mono tags */
+.light-theme .font-mono.text-slate-400 {
+  color: #0369a1 !important;
+}
